@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{{ movies_obj.title }}</title>
+    <meta name="keywords" content={{ movies_obj.title }} />
+    <meta name="description" content={{ movies_obj.title }} />
 </head>
 <body>
-
+    <div>
+        <ul>
+            <li>{{ movies_obj.title }}</li><br>
+            <li><img src="/static/images/{{ movies_obj.image }}"></li><br>
+            <li>{{ movies_obj.actor }}</li><br>
+            <li>{{ movies_obj.column__name }}</li><br>
+            <li>{{ movies_obj.updated }}</li><br>
+            <li>{{ movies_obj.years }}</li><br>
+            <li>{{ movies_obj.director }}</li><br>
+            <li>{{ movies_obj.country }}</li><br>
+            <li><a href="{% url 'movies_play' mid=movies_obj.id %}">播放1</a></li><br>
+        </ul>
+    </div>
 </body>
 </html>

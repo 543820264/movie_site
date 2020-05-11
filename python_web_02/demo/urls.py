@@ -14,5 +14,9 @@ from django.urls import path
 from demo import views
 
 urlpatterns = [
-    path('index/', views.index),
+    path('index/', views.index, name='index'),
+    path('list/<cname>/', views.list, name='list'),
+    path('list/<cname>/<int:current_page>/', views.list_page, name='list_page'),
+    path('movies/<int:mid>/', views.movies_content, name='movies_content'),
+    path('movies_play/<int:mid>/', views.movies_play, name='movies_play'),
 ]
